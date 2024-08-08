@@ -1,5 +1,9 @@
 # GitLab-Task-Scheduler
 
+![example workflow](https://github.com/develmusa/GitLab-Task-Scheduler/actions/workflows/main.yml/badge.svg)
+[![Docker Image Size](https://badgen.net/docker/size/deve1musa/gitlab-task-scheduler?icon=docker&label=image%20size)](https://hub.docker.com/r/deve1musa/gitlab-task-scheduler/)
+
+
 GitLab-Task-Scheduler is a powerful tool designed to automate the creation and scheduling of issues in GitLab projects using CI/CD pipelines.
 
 ## Table of Contents
