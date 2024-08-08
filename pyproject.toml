@@ -1,0 +1,37 @@
+[project]
+name = "gitlabtaskscheduler"
+version = "0.2.0"
+description = "Add your description here"
+authors = [
+    { name = "develmusa", email = "contact@develmusa.digital" }
+]
+dependencies = [
+    "python-gitlab>=4.9.0",
+    "pyyaml>=6.0.2",
+    "pendulum>=3.0.0",
+    "pydantic>=2.8.2",
+    "croniter>=3.0.3",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+"gitlabtaskscheduler" = "gitlabtaskscheduler:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ruff>=0.5.6",
+    "pytest>=8.3.2",
+    "pre-commit>=3.8.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gitlabtaskscheduler"]

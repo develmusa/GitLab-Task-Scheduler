@@ -1,0 +1,22 @@
+build_wheel:
+  stage: build
+  image: jfxs/rye:0.38.0-001
+  script:
+    - rye build --wheel --clean
+  artifacts:
+    paths:
+      - dist/
+
+build_docker_image:
+  image: docker:27.1
+  stage: build
+  services:
+    - docker:27.1-dind
+  variables:
+    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
+    - docker build -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG
+  only:
+    - main
