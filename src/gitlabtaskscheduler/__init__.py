@@ -111,7 +111,7 @@ def main() -> int:
         CI_JOB_TOKEN = os.getenv("CI_JOB_TOKEN")
         PROJECT_ID = os.getenv("CI_PROJECT_ID")
         CI_JOB_NAME = os.getenv("CI_JOB_NAME")
-        PAT = os.getenv("PAT")
+        PAT = os.getenv("TASK_SCHEDULER_PROJECT_ACCESS_TOKEN")
 
         # Switch to enable local testing
         if CI_JOB_TOKEN:
@@ -119,7 +119,7 @@ def main() -> int:
         else:
             CI_PROJECT_DIR = Path().cwd().parent
 
-        relative_issues_path = ".gitlab/schedule_templates"
+        relative_issues_path = ".gitlab/scheduled_templates"
         absolute_issues_path = Path(CI_PROJECT_DIR) / relative_issues_path
         GITLAB_URL = os.getenv("CI_SERVER_URL", "https://gitlab.com")
 
