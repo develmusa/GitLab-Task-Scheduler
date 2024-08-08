@@ -24,6 +24,13 @@ GitLab-Task-Scheduler is a powerful tool designed to automate the creation and s
 To interact with the GitLab API, you need a project access token. Follow the instructions here:
 [GitLab Documentation: Project Access Token](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html#create-a-project-access-token)
 
+- **Token Name:** `Task Scheduler`
+- **Role:** Guest
+- **Expiration Date:** Set an appropriate expiration date for your token.
+- **Scope:** `api`
+
+**Copy the token:** After creating the token, copy it for use in the next steps.
+
 ### 2. Create CI/CD Variables
 
 Next, configure the necessary CI/CD variables in your GitLab project:
