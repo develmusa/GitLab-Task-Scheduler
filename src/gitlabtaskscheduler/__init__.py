@@ -86,7 +86,7 @@ def parse_template_file(file_path: Path) -> ScheduledTemplate:
         raise TemplateParsingError(f"Failed to parse template file {file_path}: {e}") from e
 
 def process_template_files(directory: Path) -> List[ScheduledTemplate]:
-    template_files = directory.glob('*.md')
+    template_files = directory.rglob('*.md')
     parsed_templates = []
     
     for file_path in template_files:
